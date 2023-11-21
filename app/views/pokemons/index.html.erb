@@ -1,1 +1,14 @@
 <h1>Hello</h1>
+<h1>Lamapaloooozzaaaa</h1>
+<p>Bienvenuuuuu dans ce merveilleux mondeeeee</p>
+<br>
+<h1>Et voici nos magnifiques pokemons</h1>
+<ul>
+  <% @pokemons.each do |pokemon| %>
+  <br>
+  <li>Name: <%= pokemon.name %></li>
+  <li>level: <%= pokemon.level %></li>
+  <li>Propriétaire: <%= pokemon.user.username %></li>
+  <%=link_to "viens voir de plus près toi!", pokemon_path(:id)%>
+  <% end %>
+</ul>
