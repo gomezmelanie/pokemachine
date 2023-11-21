@@ -2,7 +2,6 @@ puts "Lets go seeding !"
 
 puts "Destroy DB"
 
-Destroy.all
 
 puts "DB has been destroyed"
 
