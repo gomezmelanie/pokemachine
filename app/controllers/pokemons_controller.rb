@@ -12,7 +12,11 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.new(params[:id])
+    @pokemon = Pokemon.new(pokemon_params)
+    @pokemon.user = current_user
+    if @pokemon.save!
+      redirect_to pokemons_path
+    end
   end
 
   def edit
@@ -22,6 +26,9 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
+    @pokemon = Pokemon.find(params[:id])
+    @pokemon.destroy
+    redirect_to pokemons_path, status: :see_other
   end
 
   private
