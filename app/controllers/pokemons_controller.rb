@@ -12,7 +12,11 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.new(params[:id])
+    @pokemon = Pokemon.new(pokemon_params)
+    @pokemon.user = current_user
+    if @pokemon.save!
+      redirect_to pokemons_path
+    end
   end
 
   def edit
@@ -22,11 +26,12 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
+   
   end
 
   private
-  def pokemon_params
-    params.require(:pokemon).permit(:name, :address, :level, type:, user_id:, price:)
-  end
 
+  def pokemon_params
+    params.require(:pokemon).permit(:name, :address, :level, :category, :user_id, :price)
+  end
 end
