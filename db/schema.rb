@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_234509) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_110011) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
-    t.bigint "pokemon_id", null: false
     t.bigint "user_id", null: false
+    t.bigint "pokemon_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pokemon_id"], name: "index_bookings_on_pokemon_id"
@@ -26,14 +26,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_234509) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.integer "level"
     t.string "picture"
     t.string "address"
     t.float "price"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_pokemons_on_user_id"
   end
 
