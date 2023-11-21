@@ -1,0 +1,9 @@
+<%= simple_form_for @pokemon do |f| %>
+  <%= f.input :name, label: 'Nom du Pokemon', error: 'Name is mandatory, please specify one' %>
+  <%= f.input :category,label:"Categorie", collection: Pokemon::CATEGORIES %>
+  <%= f.input :level, label: 'Niveau' %>
+  <%= f.input :picture, label: 'Pokemon Photo' %>
+  <%= f.input :price, label: 'Prix' %>
+  <%= f.input :address, Placeholder: '36 rue des potiers' %>
+  <%= f.button :submit %>
+<% end %>
