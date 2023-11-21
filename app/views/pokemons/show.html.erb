@@ -1,7 +1,7 @@
 
   <li>Name: <%= @pokemon.name %></li>
   <li>level: <%= @pokemon.level %></li>
-  <li>Propriétaire: <%= @pokemon.user.username %></li>
+  <li>Propriétaire: <%= @user.username %></li>
   <%=link_to "come back home", root_path %>
   <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
