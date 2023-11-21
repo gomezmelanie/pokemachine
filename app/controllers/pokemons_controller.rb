@@ -4,7 +4,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.find(@pokemon)
+    @pokemon = Pokemon.find(params[:id])
   end
 
   def new
