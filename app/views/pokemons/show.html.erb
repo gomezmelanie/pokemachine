@@ -1,4 +1,5 @@
 
-  <li>Name: <%= pokemon.name %></li>
-  <li>level: <%= pokemon.level %></li>
-  <li>Propriétaire: <%= pokemon.user.username %></li>
+  <li>Name: <%= @pokemon.name %></li>
+  <li>level: <%= @pokemon.level %></li>
+  <li>Propriétaire: <%= @pokemon.user.username %></li>
+  <%=link_to "come back home", root_path %>
