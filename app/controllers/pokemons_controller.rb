@@ -4,7 +4,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.find(@pokemon)
+    @pokemon = Pokemon.find(params[:id])
   end
 
   def new
@@ -26,7 +26,6 @@ class PokemonsController < ApplicationController
 
   private
   def pokemon_params
-    params.require(:pokemon).permit(:name, :address, :level, type:, user_id:, price:)
+    params.require(:pokemon).permit(:name, :address, :level, category:, user_id:, price:)
   end
-
 end

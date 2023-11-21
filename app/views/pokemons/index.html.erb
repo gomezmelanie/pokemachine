@@ -9,6 +9,6 @@
   <li>Name: <%= pokemon.name %></li>
   <li>level: <%= pokemon.level %></li>
   <li>Propriétaire: <%= pokemon.user.username %></li>
-  <%=link_to "viens voir de plus près toi!", pokemon_path(:id)%>
+  <%=link_to "viens voir de plus près toi!", pokemon_path(pokemon) %>
   <% end %>
 </ul>
