@@ -8,10 +8,10 @@
 <br>
 <%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-dark mb-4"%>
 <br>
-<div class = "d-flex ">
+<div class = "d-flex flex-wrap">
   <% @pokemons.each do |pokemon| %>
   <br>
-  <div class="card m-3 rounded border border-secondary" style="width: 18rem;">
+  <div class="card m-3 rounded border border-secondary" style="width: 17rem;">
 <%if pokemon.name == "Pikachu" %>
   <img src="https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/500px-Pikachu-DEPS.png", class="card-img-top" alt=<%= pokemon.name %>>
 <%elsif pokemon.name == "Dracaufeu" %>
