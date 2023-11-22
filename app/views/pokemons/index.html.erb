@@ -1,41 +1,50 @@
 <div class="banner">
 
-<div class = "container ">
-<div class = "text-center">
-<h1>Pokemachine</h1>
-<h2>A défaut de les attraper, louez les tous!</h2>
-</div>
-<br>
-<%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-dark mb-4"%>
-<br>
-<div class = "d-flex flex-wrap">
-  <% @pokemons.each do |pokemon| %>
-  <br>
-  <div class="card m-3 rounded border border-secondary" style="width: 17rem;">
-<%if pokemon.name == "Pikachu" %>
-  <img src="https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/500px-Pikachu-DEPS.png", class="card-img-top" alt=<%= pokemon.name %>>
-<%elsif pokemon.name == "Dracaufeu" %>
-  <img src="https://www.pokepedia.fr/images/1/17/Dracaufeu-RFVF.png?20141019190201" class="card-img-top" alt=<%= pokemon.name %>>
-  <%elsif pokemon.name == "Psykokwak" %>
-  <img src="https://www.pokepedia.fr/images/thumb/4/44/Psykokwak-RFVF.png/500px-Psykokwak-RFVF.png" class="card-img-top" alt=<%= pokemon.name %>>
-  <%elsif pokemon.name == "Goupix" %>
-  <img src="https://www.pokepedia.fr/images/thumb/f/f6/Goupix-RFVF.png/500px-Goupix-RFVF.png" class="card-img-top" alt=<%= pokemon.name %>>
-  <%elsif pokemon.name == "Rondoudou" %>
-  <img src="https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/500px-Rondoudou-RFVF.png" class="card-img-top" alt=<%= pokemon.name %>>
-  <%elsif pokemon.name == "Bulbizar" %>
-  <img src="https://www.pokepedia.fr/images/thumb/e/ef/Bulbizarre-RFVF.png/500px-Bulbizarre-RFVF.png" class="card-img-top" alt=<%= pokemon.name %>>
-  <%end%>
-  <div class="card-body">
-    <h5 class="card-title"><%= pokemon.name %></h5>
-    <ul class="card-text">
-    <li>level: <%= pokemon.level %></li>
-    <li>price: <%= pokemon.price %></li>
-    <li>category: <%= pokemon.category %></li>
-    <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-success" %>
-    </ul>
+  <div class="container ">
+    <div class="text-center">
+      <h1>Pokemachine</h1>
+      <h2>A défaut de les attraper, louez les tous!</h2>
+    </div>
+    <br>
+    <%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-outline-secondary"%>
+    <br>
+    <div class="d-flex ">
+      <% @pokemons.each do |pokemon| %>
+      <br>
+      <div class="card m-3 rounded border border-secondary" style="width: 18rem;">
+        <%if pokemon.name == "Pikachu" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/500px-Pikachu-DEPS.png" ,
+          class="card-img-top" alt=<%= pokemon.name %>>
+        <%elsif pokemon.name == "Dracaufeu" %>
+        <img class="pokemon-picture-index" src="https://www.pokepedia.fr/images/1/17/Dracaufeu-RFVF.png?20141019190201"
+          class="card-img-top" alt=<%= pokemon.name %>>
+        <%elsif pokemon.name == "Psykokwak" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/4/44/Psykokwak-RFVF.png/500px-Psykokwak-RFVF.png"
+          class="card-img-top" alt=<%= pokemon.name %>>
+        <%elsif pokemon.name == "Goupix" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/f/f6/Goupix-RFVF.png/500px-Goupix-RFVF.png" class="card-img-top"
+          alt=<%= pokemon.name %>>
+        <%elsif pokemon.name == "Rondoudou" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/500px-Rondoudou-RFVF.png"
+          class="card-img-top" alt=<%= pokemon.name %>>
+        <%elsif pokemon.name == "Bulbizar" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/e/ef/Bulbizarre-RFVF.png/500px-Bulbizarre-RFVF.png"
+          class="card-img-top" alt=<%= pokemon.name %>>
+        <%end%>
+        <div class="card-body">
+          <h5 class="card-title"><%= pokemon.name %></h5>
+            <div class="infopokemon">level: <%= pokemon.level %></div>
+            <div class="infopokemon">price: <%= pokemon.price %></div>
+            <div class="infopokemon">category: <%= pokemon.category %></div>
+            <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-outline-info" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-</div>
-  <% end %>
-</div>
-</div>
 </div>
