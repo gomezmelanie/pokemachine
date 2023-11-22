@@ -1,14 +1,22 @@
 // Specific CSS for your home-page
-.card-picture {
-  width: 250px;
-  height: 250px;
-  border: 1px solid rgb(41, 41, 41);
+.text-center {
+  color: black;
 }
-.card-pokemon{
-  flex-grow: 1;
-  border: 1px solid rgb(0, 0, 0);
+.pokemon-picture-index {
+  object-fit: contain;
+  height: 150px;
+  margin: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.card-body{
-  
-
+.card-body {
+  text-align: center;
+  display: block;
+}
+.infopokemon {
+  margin: 10px;
+}
+.btn-success {
+  margin-top: 10px;
 }

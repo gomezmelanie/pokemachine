@@ -1,6 +1,6 @@
 <div class = "container ">
 <%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
-  <div class = "show-card-pokemon d-flex  align-items-center justify-content-around">
+  <div class = "d-flex  align-items-center justify-content-around">
     <%if @pokemon.name == "Pikachu"%>
     <div class = col-4>
       <%= image_tag  "https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/500px-Pikachu-DEPS.png", height: '500' %>
@@ -26,17 +26,26 @@
       <%= image_tag  "https://www.pokepedia.fr/images/thumb/f/f6/Goupix-RFVF.png/500px-Goupix-RFVF.png", height: '500' %>
     </div>
     <%end%>
-    <div class = "text-center pokemon-info" >
-        <div class = username><h5><%= @user.username %></h5></div>
-        <div class = pokemon-name><h1><%= @pokemon.name %></h1></div>
-      <div class = info>
-        <li>Niveau : <%= @pokemon.level %></li>
-        <li>Type : <%= @pokemon.category %></li>
-        <li>Lieu : <%= @pokemon.address %></li>
-        <li>Prix : <%= @pokemon.price %>€</li>
+    <div >
+      <h1>Name: <%= @pokemon.name %></h1>
+      <li>level: <%= @pokemon.level %></li>
+      <%if @pokemon.name =="Pikachu" %>
+      <li>Catégorie: <%= "Electrik" %></li>
+      <%elsif @pokemon.name == "Rondoudou" %>
+      <li>Catégorie: <%= "Normal" %></li>
+      <%elsif @pokemon.name == "Dracaufeu" %>
+      <li>Catégorie: <%= "Feu" %></li>
+      <%elsif @pokemon.name == "Bulbizar" %>
+      <li>Catégorie: <%= "Plante" %></li>
+      <%elsif @pokemon.name == "Psykokwak" %>
+      <li>Catégorie: <%= "Eau" %></li>
+      <%elsif @pokemon.name == "Goupix" %>
+      <li>Catégorie: <%= "Feu" %></li>
+      <%end%>
+      <li>Address: <%= @pokemon.address %></li>
+      <li>Prix: <%= @pokemon.price %></li>
+      <h3>Propriétaire: <%= @user.username %></h3>
       </div>
-      <%= link_to "Réserver ce pokemon", pokemon_path(@pokemon), class:"btn btn-outline-info" %>
-    </div>
   </div>
   <br>
   <div>
