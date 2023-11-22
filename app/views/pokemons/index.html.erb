@@ -1,29 +1,25 @@
-<div class="banner">
-
-<div class = "container ">
-<div class = "text-center">
-<h1>Pokemachine</h1>
-<h2>A défaut de les attraper, louez les tous!</h2>
+<div class= "container">
+        <h1>Pokemachine</h1>
+        <h2>A défaut de les attraper, louez les tous!</h2>
+<div class= "add-button" >
+    <%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-primary"%>
 </div>
-<br>
-<%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-dark mb-4"%>
-<br>
-<div class = "d-flex ">
-  <% @pokemons.each do |pokemon| %>
-  <br>
-<div class="card m-3 rounded border border-secondary" style="width: 18rem;">
-  <img src="https://www.123-stickers.com/7675-large_default/autocollant-dracaufeu-pokemon-006.jpg" class="card-img-top" alt=<%= pokemon.name %>>
-  <div class="card-body">
-    <h5 class="card-title"><%= pokemon.name %></h5>
-    <ul class="card-text">
-    <li>level: <%= pokemon.level %></li>
-    <li>price: <%= pokemon.price %></li>
-    <li>category: <%= pokemon.category %></li>
-    <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-success" %>
-    </ul>
-  </div>
-</div>
-  <% end %>
-</div>
-</div>
+    <div class= "card-body d-flex">
+    <% @pokemons.each do |pokemon| %>
+      <div class= "card-pokemon">
+       <div class= "card-picture">
+       <img src="https://www.123-stickers.com/7675-large_default/autocollant-dracaufeu-pokemon-006.jpg"class="card-img-top" alt=""<%= pokemon.name %>>
+        </div>
+        <div class="card-content">
+         <h5 class="card-title"><%= pokemon.name %></h5>
+            <li>Niveau: <%= pokemon.level %></li>
+            <li>Prix: <%= pokemon.price %></li>
+            <li>Categorie: <%= pokemon.category %></li>
+        </div>
+        <div class= "card-button d-flex">
+          <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-warning"%>
+        </div>
+      </div>
+    <% end %>
+    </div>
 </div>
