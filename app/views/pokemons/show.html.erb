@@ -1,6 +1,23 @@
-<div class = "container">
-  <li>Name: <%= @pokemon.name %></li>
-  <li>level: <%= @pokemon.level %></li>
-  <li>Propriétaire: <%= @user.username %></li>
-  <%=link_to "come back home", root_path %>
-  <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<div class = "container ">
+  <div class = "d-flex  align-items-center justify-content-evenly">
+    <div class = col-4>
+      <%= image_tag "https://risibank.fr/cache/medias/0/4/413/41322/full.png", height: '200' %>
+    </div>
+    <div >
+      <li>Name: <%= @pokemon.name %></li>
+      <li>level: <%= @pokemon.level %></li>
+      <li>Catégorie: <%= @pokemon.category %></li>
+      <li>Address: <%= @pokemon.address %></li>
+      <li>Prix: <%= @pokemon.price %></li>
+      <li>Propriétaire: <%= @user.username %></li>
+    </div>
+    <div>
+    <h2>Pas mal hein? C'est Français!</h2>
+    </div>
+  </div>
+  <br>
+  <div>
+    <%=link_to "Retour", root_path, class:"btn btn-dark" %>
+    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+  </div>
+</div>
