@@ -1,17 +1,29 @@
-<h1>Hello</h1>
-<h1>Lamapaloooozzaaaa</h1>
-<p>Bienvenuuuuu dans ce merveilleux mondeeeee</p>
+<div class="banner">
+
+<div class = "container ">
+<div class = "text-center">
+<h1>Pokemachine</h1>
+<h2>A défaut de les attraper, louez les tous!</h2>
+</div>
 <br>
-<h1>Et voici nos magnifiques pokemons</h1>
- <%=link_to "Ajouter un Pokemon", new_pokemon_path(@pokemon)%>
-<h2></h2>
-<ul>
+<%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-dark mb-4"%>
+<br>
+<div class = "d-flex ">
   <% @pokemons.each do |pokemon| %>
   <br>
-  <li>Name: <%= pokemon.name %></li>
-  <li>level: <%= pokemon.level %></li>
-  <li>Propriétaire: <%= pokemon.user.username %></li>
-  <%=link_to "viens voir de plus près toi!", pokemon_path(pokemon) %>
+<div class="card m-3 rounded border border-secondary" style="width: 18rem;">
+  <img src="https://www.123-stickers.com/7675-large_default/autocollant-dracaufeu-pokemon-006.jpg" class="card-img-top" alt=<%= pokemon.name %>>
+  <div class="card-body">
+    <h5 class="card-title"><%= pokemon.name %></h5>
+    <ul class="card-text">
+    <li>level: <%= pokemon.level %></li>
+    <li>price: <%= pokemon.price %></li>
+    <li>category: <%= pokemon.category %></li>
+    <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-success" %>
+    </ul>
+  </div>
+</div>
   <% end %>
-
-</ul>
+</div>
+</div>
+</div>

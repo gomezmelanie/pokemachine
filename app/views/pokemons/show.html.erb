@@ -1,6 +1,20 @@
-
-  <li>Name: <%= @pokemon.name %></li>
-  <li>level: <%= @pokemon.level %></li>
-  <li>Propriétaire: <%= @pokemon.user.username %></li>
-  <%=link_to "come back home", root_path %>
-  <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?", class: "card-remove-link"}%>
+<div class = "container ">
+  <div class = "d-flex  align-items-center justify-content-around">
+    <div class = col-4>
+      <%= image_tag "https://www.123-stickers.com/7675-large_default/autocollant-dracaufeu-pokemon-006.jpg", height: '500' %>
+    </div>
+    <div >
+      <h1>Name: <%= @pokemon.name %></h1>
+      <li>level: <%= @pokemon.level %></li>
+      <li>Catégorie: <%= @pokemon.category %></li>
+      <li>Address: <%= @pokemon.address %></li>
+      <li>Prix: <%= @pokemon.price %></li>
+      <h3>Propriétaire: <%= @user.username %></h3>
+    </div>
+  </div>
+  <br>
+  <div>
+    <%=link_to "Retour", root_path, class:"btn btn-dark" %>
+    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+  </div>
+</div>
