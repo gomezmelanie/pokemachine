@@ -1,20 +1,23 @@
 <div class = "container ">
+<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
   <div class = "d-flex  align-items-center justify-content-around">
-    <div class = col-4>
+    <div class = col-4 >
       <%= image_tag "https://www.123-stickers.com/7675-large_default/autocollant-dracaufeu-pokemon-006.jpg", height: '500' %>
     </div>
-    <div >
-      <h1>Name: <%= @pokemon.name %></h1>
-      <li>level: <%= @pokemon.level %></li>
-      <li>Catégorie: <%= @pokemon.category %></li>
-      <li>Address: <%= @pokemon.address %></li>
-      <li>Prix: <%= @pokemon.price %></li>
-      <h3>Propriétaire: <%= @user.username %></h3>
+    <div class = "text-center pokemon-info" >
+        <div class = username><h5><%= @user.username %></h5></div>
+        <div class = pokemon-name><h1><%= @pokemon.name %></h1></div>
+      <div class = info>
+        <li>Niveau : <%= @pokemon.level %></li>
+        <li>Type : <%= @pokemon.category %></li>
+        <li>Lieu : <%= @pokemon.address %></li>
+        <li>Prix : <%= @pokemon.price %>€</li>
+      </div>
+      <%= link_to "Réserver ce pokemon", pokemon_path(@pokemon), class:"btn btn-outline-info" %>
     </div>
   </div>
   <br>
   <div>
-    <%=link_to "Retour", root_path, class:"btn btn-dark" %>
-    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>
   </div>
 </div>
