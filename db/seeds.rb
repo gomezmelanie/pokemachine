@@ -1,8 +1,5 @@
 puts "Lets go seeding !"
 
-puts "Destroy DB"
-
-
 puts "DB has been destroyed"
 
 puts "Starting creating users !"
