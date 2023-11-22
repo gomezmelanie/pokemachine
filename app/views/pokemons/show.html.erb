@@ -1,4 +1,5 @@
 <div class = "container ">
+<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
   <div class = "d-flex  align-items-center justify-content-around">
     <%if @pokemon.name == "Pikachu"%>
     <div class = col-4>
@@ -48,7 +49,6 @@
   </div>
   <br>
   <div>
-    <%=link_to "Retour", root_path, class:"btn btn-dark" %>
-    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>
   </div>
 </div>
