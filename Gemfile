@@ -52,6 +52,7 @@ gem "sassc-rails"
 gem "devise"
 gem "simple_calendar", "~> 2.4"
 gem "pg_search"
+gem "dotenv-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
