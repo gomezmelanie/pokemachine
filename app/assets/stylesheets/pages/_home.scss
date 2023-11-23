@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 .text-center {
   color: black;
+  margin: 3em
 }
 .pokemon-picture-index {
   object-fit: contain;
@@ -21,4 +22,14 @@
   margin-top: 10px;
 }
 
+.btn-outline-secondary {
+  margin-left: 1em;
+}
 
+.card {
+  background-color: white;
+}
+
+.search_bar {
+  margin-right: 2em;
+}
