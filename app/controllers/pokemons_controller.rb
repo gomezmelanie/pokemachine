@@ -1,11 +1,18 @@
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
+
   end
 
   def show
     @pokemon = Pokemon.find(params[:id])
     @user = User.find(@pokemon.user.id)
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def new
