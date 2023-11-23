@@ -1,5 +1,10 @@
-<div class = "container">
-<%= week_calendar(number_of_weeks: 2) do |date| %>
-  <%= date %>
-<% end %>
+<div class = "container d-flex ">
+<div class = "calendar">
+<h3>Début de location</h3>
+<input type="date" id="datetime-local">
+<h3>Fin de location</h3>
+<input type="date" id="datetime-local">
+</div>
+
+<%= image_tag  "https://i.pinimg.com/originals/69/0d/07/690d0773552d79a1dadcc46a3f037e32.gif", height: '100' %>
 </div>
