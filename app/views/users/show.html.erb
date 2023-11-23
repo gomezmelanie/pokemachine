@@ -15,14 +15,15 @@
         </div>
         <div>
         <ul>
-        <li class="user-li">Goupix</li>
-        <li class="user-li">Psykokwak</li>
-        <li class="user-li">Magicarpe</li>
+        <% @user.pokemons.each do |pokemon| %>
+        <%= link_to pokemon.name, pokemon_path(pokemon)%>
+        <% end %>
         </ul>
         </div>
       </div>
       <div class="col-5 pokemons-rent"><br>
         <h1>Les pokémons que je loue</h1>
+
       </div>
       </div>
   </div>

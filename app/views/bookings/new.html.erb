@@ -3,7 +3,7 @@
   <div class="card-formulaire col-4 ">
     <%= simple_form_for [@pokemon, @booking] do |f| %>
     <%= f.input :date,
-  as: :string,
+  
   input_html: { data: { controller: "datepicker" } } %>
   <%= f.button :submit, "Réserver ce pocket monster", class: "btn btn-primary" %>
     <% end %>
