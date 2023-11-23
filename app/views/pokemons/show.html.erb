@@ -39,11 +39,14 @@
         <li>Lieu : <%= @pokemon.address %></li>
         <li>Prix : <%= @pokemon.price %>€</li>
       </div>
-      <%= link_to "Réserver ce pokemon", pokemon_path(@pokemon), class:"btn btn-outline-info" %>
+      <%= link_to "Réserver ce pokemon",  new_pokemon_booking_path(@pokemon), class:"btn btn-outline-info" %>
     </div>
   </div>
   <br>
   <div>
+    <%if @user== current_user%>
     <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>
+    <%else%>
+    <%end%>
   </div>
 </div>
