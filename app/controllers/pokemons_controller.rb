@@ -9,7 +9,7 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
-    @user = User.find(@pokemon.user.id)
+    @user = @pokemon.user
   end
 
   def new
