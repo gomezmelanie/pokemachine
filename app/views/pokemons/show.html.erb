@@ -3,7 +3,7 @@
   <div class = "show-card-pokemon d-flex  align-items-center justify-content-around">
     <%= render "conditionurl" %>
     <div class = "text-center pokemon-info" >
-        <div class = username><h5><%= @user.username %></h5></div>
+        <div class = username><h5><%= link_to @user.username, user_path(@user) %></h5></div>
         <div class = pokemon-name><h1><%= @pokemon.name %></h1></div>
       <div class = info>
         <li>Niveau : <%= @pokemon.level %></li>
