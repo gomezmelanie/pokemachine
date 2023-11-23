@@ -18,7 +18,6 @@ pokemon3 = Pokemon.create!(name: "Pokemon3", level: 3, category: "Grass", price:
 
 puts "Pokemons created !"
 
-
 puts "Booking for pokemons"
 
 booking1 = Booking.create!(date: "22/10/2000", user_id: 3, pokemon_id: 9)

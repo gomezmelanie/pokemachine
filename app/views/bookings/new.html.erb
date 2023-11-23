@@ -1,10 +1,11 @@
-
-<h1>Pokémon réservé !</h1>
-
-<%= render "form", pokemon: @pokemon %>
-
-<br>
-
-<div>
-  <%= link_to "Retour", pokemons_path %>
+<div class="container ">
+  <h1>Hello World</h1>
+  <div class="card-formulaire col-4 ">
+    <%= simple_form_for [@pokemon, @booking] do |f| %>
+    <%= f.input :date,
+  as: :string,
+  input_html: { data: { controller: "datepicker" } } %>
+  <%= f.button :submit, "Réserver ce pocket monster", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
