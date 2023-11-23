@@ -48,10 +48,9 @@
         <%end%>
         <div class="card-body">
           <h5 class="card-title"><%= pokemon.name %></h5>
-          <div class="infopokemon">level: <%= pokemon.level %></div>
-          <div class="infopokemon">price: <%= pokemon.price %></div>
-          <div class="infopokemon">category: <%= pokemon.category %></div>
-          <%=link_to "come on", pokemon_path(pokemon), class:"btn btn-outline-info" %>
+          <div class="infopokemon">Niveau : <%= pokemon.level %></div>
+          <div class="infopokemon">Prix : <%= pokemon.price %>€</div>
+          <%=link_to "Détails", pokemon_path(pokemon), class:"btn btn-outline-info" %>
         </div>
       </div>
       <% end %>

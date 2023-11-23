@@ -14,11 +14,9 @@
           <h1>Mes pokémons</h1>
         </div>
         <div>
-        <ul>
-        <li class="user-li">Goupix</li>
-        <li class="user-li">Psykokwak</li>
-        <li class="user-li">Magicarpe</li>
-        </ul>
+      <% @user.pokemons.each do |pokemon| %>
+      <li class="user-li"><%= link_to pokemon.name, pokemon_path(pokemon) %></li>
+      <% end %>
         </div>
       </div>
       <div class="col-5 pokemons-rent"><br>
