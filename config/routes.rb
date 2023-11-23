@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :pokemons do
     resources :bookings, only: %i[new create]
   end
-  resources :user
+  resources :users, only: [:show]
   resources :bookings, only: [:destroy]
   # Defines the root path route ("/")
   # root "posts#index"

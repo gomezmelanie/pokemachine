@@ -1,0 +1,29 @@
+<div class="container">
+<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
+  <div class="row all-cards d-flex">
+    <div class="user-details col-10">
+    <h1>Mon profil</h1>
+    <ul>
+<li class="user-li"><%= @user.username %></li>
+<li class="user-li"><%= @user.email %></li>
+    </ul>
+    </div>
+    <div class="all-pokemons">
+      <div class="col-5 pokemons-user justify-content-between"><br>
+        <div>
+          <h1>Mes pokémons</h1>
+        </div>
+        <div>
+        <ul>
+        <li class="user-li">Goupix</li>
+        <li class="user-li">Psykokwak</li>
+        <li class="user-li">Magicarpe</li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-5 pokemons-rent"><br>
+        <h1>Les pokémons que je loue</h1>
+      </div>
+      </div>
+  </div>
+</div>
