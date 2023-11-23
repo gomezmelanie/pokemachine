@@ -1,48 +1,23 @@
-<div class="container ">
-  <%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
-  <div class="show-card-pokemon d-flex  align-items-center justify-content-around">
-    <%if @pokemon.name == "Pikachu"%>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/500px-Pikachu-DEPS.png", height: '500' %>
-    </div>
-    <%elsif @pokemon.name == "Bulbizar" %>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/thumb/e/ef/Bulbizarre-RFVF.png/500px-Bulbizarre-RFVF.png", height: '500' %>
-    </div>
-    <%elsif @pokemon.name == "Dracaufeu" %>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/1/17/Dracaufeu-RFVF.png?20141019190201", height: '500' %>
-    </div>
-    <%elsif @pokemon.name == "Rondoudou" %>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/500px-Rondoudou-RFVF.png", height: '500' %>
-    </div>
-    <%elsif @pokemon.name == "Psykokwak" %>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/thumb/4/44/Psykokwak-RFVF.png/500px-Psykokwak-RFVF.png", height: '500' %>
-    </div>
-    <%elsif @pokemon.name == "Goupix" %>
-    <div class=col-4>
-      <%= image_tag  "https://www.pokepedia.fr/images/thumb/f/f6/Goupix-RFVF.png/500px-Goupix-RFVF.png", height: '500' %>
-    </div>
-    <%end%>
-    <div class="text-center pokemon-info">
-      <div class=username>
-        <h5><%= @user.username %></h5>
-      </div>
-      <div class=pokemon-name>
-        <h1><%= @pokemon.name %></h1>
-      </div>
-      <div class=info>
+<div class = "container ">
+<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
+  <div class = "show-card-pokemon d-flex  align-items-center justify-content-around">
+    <%= render "conditionurl" %>
+    <div class = "text-center pokemon-info" >
+        <div class = username><h5><%= @user.username %></h5></div>
+        <div class = pokemon-name><h1><%= @pokemon.name %></h1></div>
+      <div class = info>
         <li>Niveau : <%= @pokemon.level %></li>
-        <li>Type : <%= @pokemon.category %></li>
+        <%= render "conditioncat" %>
         <li>Lieu : <%= @pokemon.address %></li>
         <li>Prix : <%= @pokemon.price %>€</li>
       </div>
       <%= link_to "Réserver ce pokemon",  new_pokemon_booking_path(@pokemon), class:"btn btn-outline-info" %>
     </div>
   </div>
-  <br>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div>
     <%if @user== current_user%>
     <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>

@@ -51,6 +51,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "devise"
 gem "simple_calendar", "~> 2.4"
+gem "geocoder"
 gem "pg_search"
 gem "dotenv-rails"
 
