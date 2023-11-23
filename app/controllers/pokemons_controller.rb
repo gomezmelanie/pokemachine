@@ -7,12 +7,11 @@ class PokemonsController < ApplicationController
   def show
     @pokemon = Pokemon.find(params[:id])
     @user = User.find(@pokemon.user.id)
-    @markers = @flats.geocoded.map do |flat|
+    @markers =[
       {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+        lat: @pokemon.latitude,
+        lng: @pokemon.longitude
+      }]
   end
 
   def new
