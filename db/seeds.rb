@@ -18,3 +18,7 @@ pokemon2 = Pokemon.create!(name: "Pokemon2", level: 2, address: "brest", price: 
 pokemon3 = Pokemon.create!(name: "Pokemon3", level: 3, address: "marseille", price: 30, user_id: user3.id)
 
 puts "Pokemons created !"
+
+puts "Booking for pokemons"
+
+booking1 = Booking.create!(date: "22/10/2000", user_id: 3, pokemon_id: 9)
