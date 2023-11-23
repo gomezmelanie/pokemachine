@@ -24,6 +24,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_105009) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.string "category"

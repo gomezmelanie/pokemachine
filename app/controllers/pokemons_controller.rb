@@ -1,7 +1,10 @@
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
-
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @pokemons = @pokemons.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show
