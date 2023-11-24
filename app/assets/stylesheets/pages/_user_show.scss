@@ -3,40 +3,66 @@
   border-style: solid;
   border-color: #6c757d;
   border-width: 1px;
+  border-radius: 5px;
+
 }
 
 .user-details {
-  margin: 4em;
   border-style: solid;
   border-color: #6c757d;
   border-width: 1px;
   background-color: light-gray;
-  padding: 2em;
+  padding: 1em;
   color: #646464;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.all-pokemons {
+  margin: 2em;
+}
+
+.pokemons-user {
+  border-style: solid;
+  border-color: #6c757d;
+  border-width: 1px;
+  background-color: light-gray;
+  color: #646464;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+
+.pokemons-rent {
+  border-style: solid;
+  border-color: #6c757d;
+  border-width: 1px;
+  background-color: light-gray;
+  color: #646464;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+
+}
+
+.all-cards {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.btn-back-user-profil {
+  margin-left: 213px;
 }
 
 .user-li {
   list-style: none;
+  padding: 5px;
+  margin: 2px;
 }
 
-.pokemons-user {
-  margin: 4em;
-  border-style: solid;
-  border-color: #6c757d;
-  border-width: 1px;
-  background-color: light-gray;
-  padding: 2em;
-  color: #646464;
-
-}
-
-.pokemons-rent {
-  margin: 4em;
-  border-style: solid;
-  border-color: #6c757d;
-  border-width: 1px;
-  background-color: light-gray;
-  padding: 2em;
-  color: #646464;
-
+.pokemon-li {
+  list-style: none;
 }

@@ -1,27 +1,29 @@
 <div class="container">
-<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
-  <div class="row all-cards d-flex">
-    <div class="user-details col-10">
-    <h1>Mon profil</h1>
-    <ul>
-<li class="user-li"><%= @user.username %></li>
-<li class="user-li"><%= @user.email %></li>
-    </ul>
+  <%=link_to "Retour", root_path, class:"btn btn-outline-secondary btn-back-user-profil"%>
+  <div class="container">
+    <div class="row all-cards justify-content-center">
+      <div class="user-details col-10">
+        <h1>Mon profil</h1>
+        <ul>
+          <li class="user-li"><%= @user.username %></li>
+          <li class="user-li"><%= @user.email %></li>
+        </ul>
+      </div>
+      <div class="all-pokemons row justify-content-around">
+        <div class="col-5 pokemons-user"><br>
+          <div class=" d-flex justify-top">
+            <h3>Mes pokémons</h3>
+          </div>
+          <div>
+            <% @user.pokemons.each do |pokemon| %>
+            <li class="pokemon-li"><%= link_to pokemon.name, pokemon_path(pokemon), {style: 'color:#fecb03' } %></li>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-5 pokemons-rent"><br>
+          <h3>Les pokémons que je loue</h3>
+        </div>
+      </div>
     </div>
-    <div class="all-pokemons">
-      <div class="col-5 pokemons-user justify-content-between"><br>
-        <div>
-          <h1>Mes pokémons</h1>
-        </div>
-        <div>
-      <% @user.pokemons.each do |pokemon| %>
-      <li class="user-li"><%= link_to pokemon.name, pokemon_path(pokemon) %></li>
-      <% end %>
-        </div>
-      </div>
-      <div class="col-5 pokemons-rent"><br>
-        <h1>Les pokémons que je loue</h1>
-      </div>
-      </div>
   </div>
 </div>
