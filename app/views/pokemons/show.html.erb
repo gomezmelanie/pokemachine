@@ -4,16 +4,18 @@
     <%= render "conditionurl" %>
     <div class="text-center pokemon-info">
       <div class=username >
-        <h5><%= link_to @user.username, user_path(@user) %></h5>
+        <h5><%= link_to @user.username.upcase, user_path(@user) %></h5>
       </div>
       <div class= "pokemon-name d-flex justify-content-center">
         <h1 class= "pokemon-font"><%= @pokemon.name %></h1>
       </div>
       <div class= "info">
+      <div class= "text-li mb-3">
         <li>Niveau : <%= @pokemon.level %></li>
         <%= render "conditioncat" %>
         <li>Lieu : <%= @pokemon.address %></li>
         <li>Prix : <%= @pokemon.price %>€</li>
+        </div>
         <% if @user != current_user%>
           <%= link_to "Réserver ce pokemon",  new_pokemon_booking_path(@pokemon), class:"btn btn-outline-info" %>
         <% else%>

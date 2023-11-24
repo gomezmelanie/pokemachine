@@ -4,8 +4,10 @@
     <%= simple_form_for [@pokemon, @booking] do |f| %>
     <%= f.input :date,
   input_html: { data: { controller: "datepicker" } } %>
-  <%= f.button :submit, "Réserver ce pocket monster", class: "btn btn-primary" %>
+    <%= f.button :submit, "Réserver ce pocket monster", class: "btn btn-primary" %>
     <% end %>
-    <%= image_tag  "https://i.pinimg.com/originals/69/0d/07/690d0773552d79a1dadcc46a3f037e32.gif", height: '100' %>
+    <div class="dragogif mt-3">
+      <%= image_tag  "https://i.pinimg.com/originals/69/0d/07/690d0773552d79a1dadcc46a3f037e32.gif", height: '100' %>
+    </div>
   </div>
 </div>
