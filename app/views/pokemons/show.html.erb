@@ -1,27 +1,39 @@
-<div class = "container ">
-<%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
-  <div class = "show-card-pokemon d-flex  align-items-center justify-content-around">
+<div class="container ">
+  <%=link_to "Retour", root_path, class:"btn btn-outline-secondary"%>
+  <div class="show-card-pokemon d-flex  align-items-center justify-content-around">
     <%= render "conditionurl" %>
-    <div class = "text-center pokemon-info" >
-        <div class = username><h5><%= link_to @user.username, user_path(@user) %></h5></div>
-        <div class = pokemon-name><h1><%= @pokemon.name %></h1></div>
-      <div class = info>
+    <div class="text-center pokemon-info">
+      <div class=username >
+        <h5><%= link_to @user.username, user_path(@user) %></h5>
+      </div>
+      <div class= "pokemon-name d-flex justify-content-center">
+        <h1 class= "pokemon-font"><%= @pokemon.name %></h1>
+      </div>
+      <div class= "info">
         <li>Niveau : <%= @pokemon.level %></li>
         <%= render "conditioncat" %>
         <li>Lieu : <%= @pokemon.address %></li>
         <li>Prix : <%= @pokemon.price %>€</li>
+        <% if @user != current_user%>
+          <%= link_to "Réserver ce pokemon",  new_pokemon_booking_path(@pokemon), class:"btn btn-outline-info" %>
+        <% else%>
+        <div class="form-group d-flex justify-content-center ">
+          <%= link_to pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" do %>
+          <button class="noselect"><span class="text">Supprimer</span><span class="icon"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                </path>
+              </svg></span>
+          </button>
+          <% end %>
+          <% end %>
+        </div>
       </div>
-      <%= link_to "Réserver ce pokemon",  new_pokemon_booking_path(@pokemon), class:"btn btn-outline-info" %>
     </div>
-  </div>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div>
-    <%if @user== current_user%>
-    <%= link_to "supprimer ce Pokemon", pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>
-    <%else%>
-    <%end%>
+    <div style="width: 100%; height: 600px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div>
+    </div>
   </div>
 </div>

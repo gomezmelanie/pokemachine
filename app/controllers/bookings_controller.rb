@@ -8,9 +8,10 @@ class BookingsController < ApplicationController
     @pokemon = Pokemon.find(params[:pokemon_id])
     @booking = Booking.new(booking_params)
     @booking.pokemon = @pokemon
-    @pokemon.user = current_user
-    if
-      @pokemon.save
+    @booking.user = current_user
+    
+    if @booking.save
+
       redirect_to user_path(current_user)
       
     else
@@ -21,6 +22,6 @@ class BookingsController < ApplicationController
  private
 
   def booking_params
-    params.require(:booking).permit(:pokemon_id)
+    params.require(:booking).permit(:date)
   end
 end

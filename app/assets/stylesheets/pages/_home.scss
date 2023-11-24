@@ -1,8 +1,9 @@
 // Specific CSS for your home-page
 .text-center {
   color: black;
-  margin: 3em
+  margin: 3em;
 }
+
 .pokemon-picture-index {
   object-fit: contain;
   height: 150px;
@@ -32,4 +33,66 @@
 
 .search_bar {
   margin-right: 2em;
+}
+
+
+button {
+ width: 150px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: #f90b0b;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px gba(0,0,0,0.15);
+ background: #f90b0b;
+}
+
+button, button span {
+ transition: 200ms;
+}
+
+button .text {
+ transform: translateX(35px);
+ color: white;
+ font-weight: bold;
+}
+
+button .icon {
+ position: absolute;
+ border-left: 1px solid #f90b0b;
+ transform: translateX(110px);
+ height: 40px;
+ width: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+button svg {
+ width: 15px;
+ fill: #eee;
+}
+
+button:hover {
+ background: #f90b0b;
+}
+
+button:hover .text {
+ color: transparent;
+}
+
+button:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(0);
+}
+
+button:focus {
+ outline: none;
+}
+
+button:active .icon svg {
+ transform: scale(0.8);
 }

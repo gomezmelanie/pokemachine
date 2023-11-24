@@ -2,8 +2,8 @@
 
   <div class="container ">
     <div class="text-center">
-      <h1>Pokemachine</h1>
-      <h2>A défaut de les attraper, louez les tous!</h2>
+      <h1 class="pokemon-font">Pokemachine</h1>
+      <h2 class="pokemon-font">A défaut de les attraper, louez les tous!</h2>
     </div>
     <div class="d-flex justify-content-between align-items-center">
         <%=link_to "Ajouter un Pokemon", new_pokemon_path, class:"btn btn-outline-secondary d-flex align-items-center"%>
@@ -44,6 +44,58 @@
         <%elsif pokemon.name == "Bulbizar" %>
         <img class="pokemon-picture-index"
           src="https://www.pokepedia.fr/images/thumb/e/ef/Bulbizarre-RFVF.png/500px-Bulbizarre-RFVF.png"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Abo" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/5/56/Abo-RFVF.png?20200407161300"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Abra" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/3/36/Abra-RFVF.png?20200407163057"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Aéromite" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/0/0f/Aéromite-RFVF.png?20200407162325"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Akwakwak" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/6/6e/Akwakwak-RFVF.png/1220px-Akwakwak-RFVF.png?20150109220818"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Alakazam" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/6/68/Alakazam-RFVF.png?20200407175447"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Amonistar" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/f/f2/Amonistar-RFVF.png?20200407174740"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Amonita" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/8/83/Amonita-RFVF.png?20200407174723"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Aquali" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/6/6b/Aquali-RFVF.png/1093px-Aquali-RFVF.png?20200407174455"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Arbok" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/7/7f/Arbok-RFVF.png?20200407161332"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Arcanin" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/7/7e/Arcanin-RFVF.png/1278px-Arcanin-RFVF.png?20150109221603"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Artikodin" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/thumb/b/bb/Artikodin-RFVF.png/1058px-Artikodin-RFVF.png?20160813171115"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Aspicot" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/9/9b/Aspicot-RFVF.png?20200407160910"
+          class="card-img-top" alt=<%= pokemon.name %>>
+          <%elsif pokemon.name == "Boustiflor" %>
+        <img class="pokemon-picture-index"
+          src="https://www.pokepedia.fr/images/f/f5/Boustiflor-RFVF.png?20200407163456"
           class="card-img-top" alt=<%= pokemon.name %>>
         <%end%>
         <div class="card-body">
