@@ -21,6 +21,14 @@
       </div>
       <div class="col-5 pokemons-rent"><br>
         <h1>Les pokémons que je loue</h1>
+
+        <div class= "reservation">
+
+    <% @user.bookings.each do |booking| %>
+    <%= booking.pokemon.name %>
+    <%= booking.date %>
+          <% end %>
+    </div>
       </div>
       </div>
   </div>
