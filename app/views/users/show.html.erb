@@ -22,31 +22,16 @@
         </div>
         <div class="col-5 pokemons-rent"><br>
           <h3>Les pokémons que je loue</h3>
-        </div>
-      </div>
-    </div>
-    <div class="all-pokemons">
-      <div class="col-5 pokemons-user justify-content-between"><br>
-        <div>
-          <h1>Mes pokémons</h1>
-        </div>
-        <div>
-      <% @user.pokemons.each do |pokemon| %>
-      <li class="user-li"><%= link_to pokemon.name, pokemon_path(pokemon) %></li>
-      <% end %>
-        </div>
-      </div>
-      <div class="col-5 pokemons-rent"><br>
-        <h1>Les pokémons que je loue</h1>
-
-        <div class= "reservation">
+           <div class= "reservation">
 
     <% @user.bookings.each do |booking| %>
     <%= booking.pokemon.name %>
     <%= booking.date %>
           <% end %>
     </div>
+        </div>
       </div>
-      </div>
+    </div>
+    
   </div>
 </div>

@@ -36,19 +36,17 @@
 }
 
 
-
-
 button {
  width: 150px;
  height: 50px;
  cursor: pointer;
  display: flex;
  align-items: center;
- background: red;
+ background: #f90b0b;
  border: none;
  border-radius: 5px;
- box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
- background: #e62222;
+ box-shadow: 1px 1px 3px gba(0,0,0,0.15);
+ background: #f90b0b;
 }
 
 button, button span {
@@ -63,7 +61,7 @@ button .text {
 
 button .icon {
  position: absolute;
- border-left: 1px solid #c41b1b;
+ border-left: 1px solid #f90b0b;
  transform: translateX(110px);
  height: 40px;
  width: 40px;
@@ -78,7 +76,7 @@ button svg {
 }
 
 button:hover {
- background: #ff3636;
+ background: #f90b0b;
 }
 
 button:hover .text {
