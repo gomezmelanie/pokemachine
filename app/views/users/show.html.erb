@@ -2,19 +2,21 @@
   <%=link_to "Retour", root_path, class:"btn btn-outline-secondary btn-back-user-profil"%>
   <div class="container">
     <div class="row all-cards justify-content-center">
-      <div class="user-details col-10">
-        <h1>Mon profil</h1>
+      <div class="card user-details col-10">
+        <div class="header">
+          <h1>Mon profil</h1>
+        </div>
         <ul>
           <li class="user-li"><%= @user.username %></li>
           <li class="user-li"><%= @user.email %></li>
         </ul>
       </div>
       <div class="all-pokemons row justify-content-around">
-        <div class="col-5 pokemons-user"><br>
-          <div class=" d-flex justify-top">
+        <div class="card col-5 pokemons-user"><br>
+          <div class="header">
             <h3>Mes pokémons</h3>
           </div>
-          <div>
+          <div class="container">
             <% @user.pokemons.each do |pokemon| %>
             <li class="pokemon-li"><%= link_to pokemon.name, pokemon_path(pokemon), {style: 'color:#fecb03' } %></li>
             <% end %>
@@ -32,6 +34,6 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>
